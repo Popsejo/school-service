@@ -4,6 +4,7 @@ import kdg.be.school.model.School;
 import kdg.be.school.services.SchoolService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -14,12 +15,12 @@ public class SchoolController {
     private SchoolService service;
 
     @GetMapping("/getSchool/{id}")
-    public School getSchool(int id){
+    public School getSchool(@PathVariable int id){
         return this.service.getSchool(id);
     }
 
 
-    @GetMapping("/getAllSchools")
+    @GetMapping("/")
     public List<School> getSchools(){
         return this.service.getAllSchools();
     }
