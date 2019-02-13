@@ -14,7 +14,7 @@ public class SchoolController {
     @Autowired
     private SchoolService service;
 
-    @GetMapping("/getSchool/{id}")
+    @GetMapping("/school/{id}")
     public School getSchool(@PathVariable int id){
         return this.service.getSchool(id);
     }
